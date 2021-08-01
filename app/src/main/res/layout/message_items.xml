@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/message_list_drawable_border"
+    android:padding="16dp"
+    tools:context=".ui.MainFragment"
+    >
+<ImageView
+    android:id="@+id/profile_image"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_marginEnd="5dp"
+    android:background="@drawable/index"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/senderNameTextView"
+    android:contentDescription="@string/todo"
+    />
+
+  <TextView
+      android:id="@+id/senderNameTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:lines="1"
+      android:textAlignment="viewStart"
+      android:textColor="#222"
+      android:textSize="18sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@+id/messageBodyTextView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/profile_image"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="1"
+      tools:text="Rofhiwa Sikhauli"
+      />
+
+
+  <TextView
+      android:id="@+id/messageBodyTextView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:lines="1"
+      android:textAlignment="viewStart"
+      android:textColor="#222"
+      android:textSize="14sp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/profile_image"
+      app:layout_constraintTop_toBottomOf="@+id/senderNameTextView"
+      tools:text="This is the message to the recipient"
+      />
+
+  <TextView
+      android:id="@+id/dateTimeTextView"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      android:textAlignment="center"
+      android:textColor="#444"
+      android:textSize="12sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/senderNameTextView"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="12:00pm"
+      />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
