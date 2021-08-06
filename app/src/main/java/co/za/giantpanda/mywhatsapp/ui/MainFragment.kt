@@ -1,6 +1,6 @@
 package co.za.giantpanda.mywhatsapp.ui
 
-import MessageAdapter
+import co.za.giantpanda.mywhatsapp.adapter.MessageAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

@@ -1,5 +1,5 @@
+package co.za.giantpanda.mywhatsapp.adapter
 
-import MessageAdapter.MessageViewHolder
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +16,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageViewHolder>() {
+class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
   private val messageLists: MutableList<MessageDetails> = messageDetails
 
   class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
