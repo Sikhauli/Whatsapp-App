@@ -1,4 +1,4 @@
-package co.za.giantpanda.whatsapp1
+package co.za.giantpanda.mywhatsapp
 
 import org.junit.Test
 

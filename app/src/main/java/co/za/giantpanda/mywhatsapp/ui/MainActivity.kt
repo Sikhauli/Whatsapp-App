@@ -1,4 +1,4 @@
-package co.za.giantpanda.whatsapp1.ui
+package co.za.giantpanda.mywhatsapp.ui
 
 
 import android.os.Bundle
@@ -7,10 +7,10 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import co.za.giantpanda.whatsapp1.R
-import co.za.giantpanda.whatsapp1.R.id
-import co.za.giantpanda.whatsapp1.R.layout
-import co.za.giantpanda.whatsapp1.R.string
+import co.za.giantpanda.mywhatsapp.R
+import co.za.giantpanda.mywhatsapp.R.id
+import co.za.giantpanda.mywhatsapp.R.layout
+import co.za.giantpanda.mywhatsapp.R.string
 
 class MainActivity : AppCompatActivity() {
 

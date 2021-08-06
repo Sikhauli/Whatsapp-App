@@ -6,18 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.recyclerview.widget.RecyclerView.Adapter
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import co.za.giantpanda.whatsapp1.ui.MainActivity
-import co.za.giantpanda.whatsapp1.ui.MainFragment
-import co.za.giantpanda.whatsapp1.R
-import co.za.giantpanda.whatsapp1.model.MessageDetails
-import java.lang.String
+import co.za.giantpanda.mywhatsapp.ui.MainActivity
+import co.za.giantpanda.mywhatsapp.ui.MainFragment
+import co.za.giantpanda.mywhatsapp.R
+import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class MessageAdapter(messageDetails: MutableList<MessageDetails>) : Adapter<MessageViewHolder>() {
+class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageViewHolder>() {
   private val messageLists: MutableList<MessageDetails> = messageDetails
 
   class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
@@ -53,22 +52,21 @@ class MessageAdapter(messageDetails: MutableList<MessageDetails>) : Adapter<Mess
   override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
     val currentItem: MessageDetails = messageLists[position]
     try {
-      val date = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(currentItem.getCreatedAt())
+      val date = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(currentItem.createdAt)
       if (date != null) {
         holder.dateTimeTextView.text = DateUtils.getRelativeTimeSpanString(date.time)
       }
     } catch (e: ParseException) {
       e.printStackTrace()
     }
-    holder.senderNameTextView.text = String.format("%s %s", currentItem.getFirstName(), currentItem.getLastName())
+    holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
     //holder.subjectTextView.setText(currentItem.getSubject())
-    holder.messageBodyTextView.text = currentItem.getMessageBody()
+    holder.messageBodyTextView.text = currentItem.messageBody
    // holder.isImportantImageView.setImageResource(if (currentItem.isImportant()) R.drawable.ic_star_dark else R.drawable.ic_star_outline)
-    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.getInstance(currentItem)) }
+    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.newInstance(currentItem)) }
   }
 
   override fun getItemCount(): Int {
     return messageLists.size
   }
-
 }
