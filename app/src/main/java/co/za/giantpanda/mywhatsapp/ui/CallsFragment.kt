@@ -1,4 +1,4 @@
-package co.za.giantpanda.mywhatsapp.adapter
+package co.za.giantpanda.mywhatsapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

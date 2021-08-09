@@ -6,21 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/message_list_drawable_border"
-    android:padding="16dp"
-    tools:context=".ui.MainFragment"
-    >
-<ImageView
-    android:id="@+id/profile_image"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:layout_marginEnd="5dp"
-    android:background="@drawable/index"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintEnd_toStartOf="@id/senderNameTextView"
-    android:contentDescription="@string/todo"
-    />
+    android:padding="8dp"
+    tools:context=".ui.MainFragment">
+
+  <de.hdodenhof.circleimageview.CircleImageView
+
+      android:id="@+id/profile_image"
+      android:layout_width="60dp"
+      android:layout_height="60dp"
+      android:layout_centerInParent="true"
+      android:layout_marginEnd="5dp"
+      android:background="@drawable/index"
+      app:civ_border_color="@color/AppBar"
+      app:civ_border_width="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintDimensionRatio="H,1:1"
+      app:layout_constraintEnd_toStartOf="@id/senderNameTextView"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"/>
 
   <TextView
       android:id="@+id/senderNameTextView"
@@ -37,14 +40,14 @@
       app:layout_constraintStart_toEndOf="@id/profile_image"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="1"
-      tools:text="Rofhiwa Sikhauli"
-      />
+      tools:text="Rofhiwa Sikhauli"/>
 
 
   <TextView
       android:id="@+id/messageBodyTextView"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_marginStart="4dp"
       android:ellipsize="end"
       android:lines="1"
       android:textAlignment="viewStart"
@@ -54,8 +57,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@id/profile_image"
       app:layout_constraintTop_toBottomOf="@+id/senderNameTextView"
-      tools:text="This is the message to the recipient"
-      />
+      tools:text="This is the message to the recipient"/>
 
   <TextView
       android:id="@+id/dateTimeTextView"
@@ -68,8 +70,7 @@
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/senderNameTextView"
       app:layout_constraintTop_toTopOf="parent"
-      tools:text="12:00pm"
-      />
+      tools:text="12:00pm"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

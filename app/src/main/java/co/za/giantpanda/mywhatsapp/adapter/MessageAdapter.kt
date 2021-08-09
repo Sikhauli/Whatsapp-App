@@ -25,12 +25,6 @@ class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView
 
     var messageBodyTextView: TextView = itemView.findViewById(R.id.messageBodyTextView)
     var dateTimeTextView: TextView = itemView.findViewById(R.id.dateTimeTextView)
-    //var isImportantImageView: ImageButton
-
-    init {
-      //subjectTextView = itemView.findViewById(R.id.subjectTextView)
-      //isImportantImageView = itemView.findViewById(R.id.isImportantImageView)
-    }
   }
 
   fun addItems(messageDetails: List<MessageDetails>?) {

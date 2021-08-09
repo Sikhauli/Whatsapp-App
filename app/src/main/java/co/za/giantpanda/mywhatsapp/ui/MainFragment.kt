@@ -19,7 +19,7 @@ class MainFragment : Fragment(), MessageListener {
     private lateinit var messageAdapter: MessageAdapter
 
     companion object {
-        const val MESSAGE_DETAILS = "MESSAGE_DETAILS"
+        private const val MESSAGE_DETAILS = "MESSAGE_DETAILS"
 
         fun newInstance(messageDetails: MessageDetails): MainFragment {
             val bundle = Bundle().apply { putSerializable(MESSAGE_DETAILS, messageDetails) }
