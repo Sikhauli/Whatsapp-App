@@ -14,8 +14,8 @@
   <string name="new_broadcast">New Broadcast</string>
   <string name="new_group">New Group</string>
   <string name="searchbox">Search</string>
-  <string name="todo">TODO</string>
   <string name="calls">CALLS</string>
   <string name="chats">CHATS</string>
   <string name="status">STATUS</string>
+  <string name="todo">TODO</string>
 </resources>

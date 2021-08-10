@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
     tabLayout = findViewById<View>(id.tabLayOut) as TabLayout
     viewPager = findViewById<View>(id.fragmentContainer) as ViewPager
 
+    tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.ic_baseline_camera_alt_24))
     tabLayout.addTab(tabLayout.newTab().setText("CHATS"))
     tabLayout.addTab(tabLayout.newTab().setText("STATUS"))
     tabLayout.addTab(tabLayout.newTab().setText("CALLS"))
@@ -89,5 +90,4 @@ class MainActivity : AppCompatActivity() {
     }
     fragmentTransaction.commit()
   }
-
 }
