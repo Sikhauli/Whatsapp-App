@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/shape.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.18541666666666667" />
+        <entry key="app/src/main/res/layout/fragment_status.xml" value="0.22" />
         <entry key="app/src/main/res/layout/message_items.xml" value="0.18541666666666667" />
         <entry key="app/src/main/res/menu/toolbar_menu.xml" value="0.18541666666666667" />
       </map>

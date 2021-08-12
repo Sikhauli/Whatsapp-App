@@ -7,47 +7,69 @@
     android:padding="8dp"
     tools:context=".ui.StatusFragment"
     >
-  <LinearLayout
-      android:id="@+id/myStatusContainer"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      app:layout_constraintBottom_toTopOf="@+id/statusContainer"
-      app:layout_constraintEnd_toEndOf="parent"
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imageStatusUpload"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/index"
+        android:contentDescription="@string/todo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+  <com.mikhaellopez.circularimageview.CircularImageView
+      android:id="@+id/addButton"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="36dp"
+      android:layout_marginTop="28dp"
+      android:contentDescription="@string/todo"
+      android:src="@drawable/ic_baseline_add_circle_24"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"
-      >
-    <ImageButton
-        android:id="@+id/imageStatusUpload"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="start|center"
-        android:contentDescription="@string/todo"
-        app:layout_constraintBottom_toTopOf="@+id/myStatusContainer"
-        app:layout_constraintEnd_toStartOf="@+id/myStatusView"
-        app:layout_constraintStart_toStartOf="@+id/myStatusContainer"
-        app:layout_constraintTop_toTopOf="@+id/myStatusContainer"
-
+      />
+  <TextView
+        android:id="@+id/myStatusView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toEndOf="@+id/imageStatusUpload"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <TextView
-        android:id="@+id/myStatusView"
-        android:layout_width="wrap_content"
+        android:id="@+id/statusNoPostMSG"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-
+        app:layout_constraintStart_toEndOf="@+id/imageStatusUpload"
+        app:layout_constraintTop_toBottomOf="@+id/myStatusView"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
-
-  </LinearLayout>
+  <TextView
+      android:id="@+id/statusBar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="5dp"
+      android:textColor="#ACA7A7"
+      android:background="#ECE5E5"
+      android:text="Recent Updates"
+      android:layout_marginBottom="10dp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageStatusUpload"
+      app:layout_constraintEnd_toEndOf="parent"/>
 
   <FrameLayout
       android:id="@+id/statusContainer"
       android:layout_width="0dp"
       android:layout_height="0dp"
+      android:layout_marginTop="5dp"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/myStatusContainer">
+      app:layout_constraintTop_toBottomOf="@+id/statusBar">
 
 
   </FrameLayout>
