@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1875" />
+        <entry key="app/src/main/res/drawable/baseline_create_24.xml" value="0.2296875" />
         <entry key="app/src/main/res/drawable/ic_baseline_call_24.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1875" />
         <entry key="app/src/main/res/drawable/ic_baseline_videocam_24.xml" value="0.1875" />

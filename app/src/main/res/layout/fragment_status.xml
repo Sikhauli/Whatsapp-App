@@ -33,7 +33,11 @@
         android:id="@+id/myStatusView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="@string/my_status"
+        android:textColor="#000"
+        android:textSize="18sp"
         android:layout_marginTop="14dp"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@+id/imageStatusUpload"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,6 +47,10 @@
         android:id="@+id/statusNoPostMSG"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:textColor="#CDC5C5"
+        android:textStyle="bold"
+        android:text="@string/tap_to_add_status_update"
+        android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@+id/imageStatusUpload"
         app:layout_constraintTop_toBottomOf="@+id/myStatusView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,11 +59,12 @@
   <TextView
       android:id="@+id/statusBar"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="25dp"
       android:layout_marginTop="5dp"
       android:textColor="#ACA7A7"
+      android:gravity="start|center"
       android:background="#ECE5E5"
-      android:text="Recent Updates"
+      android:text="@string/recent_updates"
       android:layout_marginBottom="10dp"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/imageStatusUpload"
@@ -74,5 +83,31 @@
 
   </FrameLayout>
 
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/write_status"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="100dp"
+      android:layout_marginEnd="16dp"
+      app:backgroundTint="#EFE8E8"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:tint="@color/black"
+      app:srcCompat="@drawable/baseline_create_24"
+      android:contentDescription="@string/todo"
+      />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/floating_action_button"
+      android:layout_width="80dp"
+      android:layout_height="wrap_content"
+      android:layout_margin="16dp"
+      app:backgroundTint="#1FBA25"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:tint="@color/white"
+      app:srcCompat="@drawable/ic_baseline_camera_alt_24"
+      android:contentDescription="@string/todo"
+      />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
