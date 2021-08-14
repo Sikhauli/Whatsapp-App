@@ -54,9 +54,7 @@ class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView
       e.printStackTrace()
     }
     holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-    //holder.subjectTextView.setText(currentItem.getSubject())
     holder.messageBodyTextView.text = currentItem.messageBody
-   // holder.isImportantImageView.setImageResource(if (currentItem.isImportant()) R.drawable.ic_star_dark else R.drawable.ic_star_outline)
     holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.newInstance(currentItem)) }
   }
 
