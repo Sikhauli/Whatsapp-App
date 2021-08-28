@@ -23,10 +23,9 @@ android {
     }
   }
 
-  buildFeatures{
+  buildFeatures {
     viewBinding true
   }
-
 
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
@@ -35,6 +34,10 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+}
+
+repositories {
+  maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -78,6 +81,11 @@ dependencies {
   implementation 'com.mikhaellopez:circularimageview:4.3.0'
 
   implementation('androidx.fragment:fragment-ktx:1.4.0-alpha06')
+
+  //cameraKit
+ // implementation 'com.camerakit:jpegkit:0.2.0-alpha1'
+
+  //image picker
 
   testImplementation 'junit:junit:4.13.2'
   androidTestImplementation 'androidx.test.ext:junit:1.1.3'

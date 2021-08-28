@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.PicturesFragment"
-    >
+    android:background="#ffffff"
+    tools:context=".ui.PicturesFragment">
 
-  <!-- TODO: Update blank fragment layout -->
-  <TextView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:text="@string/hello_blank_fragment"
+  <!-- Adding bottom sheet after main content -->
+  <ImageView
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:id="@+id/backButton"
+      android:layout_margin="20dp"
+      android:src="@drawable/ic_back"
+      android:layout_alignParentStart="true"
+      android:contentDescription="@string/todo"
       />
+  <include layout="@layout/camera_main" />
+  <include layout="@layout/bottom_sheet" />
 
-</FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

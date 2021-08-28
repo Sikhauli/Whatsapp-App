@@ -1,6 +1,5 @@
 package co.za.giantpanda.mywhatsapp.ui
 
-import co.za.giantpanda.mywhatsapp.adapter.MessageAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +8,17 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.R.layout
+import co.za.giantpanda.mywhatsapp.adapter.MessageAdapter
+import co.za.giantpanda.mywhatsapp.adapter.MessageChatsDetailsAdapter
 import co.za.giantpanda.mywhatsapp.model.MessageAsyncTask
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import co.za.giantpanda.mywhatsapp.model.MessageListener
-import java.util.*
+import java.util.ArrayList
 
 class MainFragment : Fragment(), MessageListener {
 
     private lateinit var messageAdapter: MessageAdapter
+    private lateinit var messageChatAdapter: MessageChatsDetailsAdapter
 
     companion object {
         private const val MESSAGE_DETAILS = "MESSAGE_DETAILS"
@@ -37,6 +39,8 @@ class MainFragment : Fragment(), MessageListener {
         messageAdapter = MessageAdapter(ArrayList())
         messageAdapter.setHasStableIds(true)
         messageRecyclerView.adapter = messageAdapter
+
+
         MessageAsyncTask(this).execute()
     }
 

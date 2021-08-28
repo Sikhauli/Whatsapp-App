@@ -12,40 +12,42 @@
       android:id="@+id/profile_image"
       android:layout_width="60dp"
       android:layout_height="60dp"
-      android:layout_marginEnd="5dp"
       android:layout_centerInParent="true"
-      android:src="@drawable/index"
-      app:layout_constraintDimensionRatio="H,1:1"
+      android:layout_marginEnd="5dp"
       android:contentDescription="@string/todo"
-      app:layout_constraintStart_toStartOf="parent"
+      android:src="@drawable/index"
       app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintDimensionRatio="H,1:1"
+      app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent"/>
 
   <TextView
       android:id="@+id/senderNameTextView"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
+      android:layout_marginStart="5dp"
       android:ellipsize="end"
       android:lines="1"
-      android:layout_marginStart="5dp"
+      android:layout_marginTop="10dp"
       android:textAlignment="viewStart"
       android:textColor="#222"
       android:textSize="18sp"
       android:textStyle="bold"
-      app:layout_constraintBottom_toTopOf="@+id/messageBodyTextView"
+      app:layout_constraintBottom_toTopOf="@+id/dateTimeTextView"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toEndOf="@id/profile_image"
       app:layout_constraintTop_toTopOf="parent"
       app:layout_constraintVertical_bias="1"
       tools:text="Rofhiwa Sikhauli"/>
 
-
   <TextView
       android:id="@+id/dateTimeTextView"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:layout_marginStart="4dp"
+      android:layout_marginStart="5dp"
       android:ellipsize="end"
+      android:layout_marginBottom="10dp"
+      app:layout_goneMarginStart="5dp"
       android:lines="1"
       android:textAlignment="viewStart"
       android:textColor="#444"
@@ -56,17 +58,13 @@
       app:layout_constraintTop_toBottomOf="@+id/senderNameTextView"
       tools:text="55 minutes ago"/>
 
-
-
-
   <View
       android:layout_width="0dp"
       android:layout_height="0.5dp"
-      android:background="@android:color/black"
       android:layout_marginTop="5dp"
-      app:layout_constraintStart_toEndOf="@id/profile_image"
-      app:layout_constraintTop_toBottomOf="@+id/profile_image"
+      android:background="@android:color/black"
       app:layout_constraintEnd_toEndOf="parent"
-      />
+      app:layout_constraintStart_toEndOf="@id/profile_image"
+      app:layout_constraintTop_toBottomOf="@+id/profile_image"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,21 +10,21 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
+import co.za.giantpanda.mywhatsapp.ui.ChatsFragment
 import co.za.giantpanda.mywhatsapp.ui.MainActivity
 import co.za.giantpanda.mywhatsapp.ui.MainFragment
+import co.za.giantpanda.mywhatsapp.ui.MessageChatFragment
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.util.Calendar.getInstance
 import java.util.Locale
 
-class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
+class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageChatsDetailsAdapter.MessageViewHolder>() {
   private var messageLists: MutableList<MessageDetails> = messageDetails
 
   class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
-    var container: ConstraintLayout = itemView.findViewById(R.id.container)
+    var container: ConstraintLayout = itemView.findViewById(R.id.chatsContainer)
     var senderNameTextView: TextView = itemView.findViewById(R.id.senderNameTextView)
-
-    var messageBodyTextView: TextView = itemView.findViewById(R.id.messageBodyTextView)
-    var dateTimeTextView: TextView = itemView.findViewById(R.id.dateTimeTextView)
   }
 
   fun addItems(messageDetails: List<MessageDetails>?) {
@@ -46,21 +46,21 @@ class MessageAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView
   override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
 
     val currentItem: MessageDetails = messageLists[position]
-    try {
-      val date = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(currentItem.createdAt)
-      if (date != null) {
-        holder.dateTimeTextView.text = DateUtils.getRelativeTimeSpanString(date.time)
-      }
-    } catch (e: ParseException) {
-      e.printStackTrace()
-    }
+
     holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-    holder.messageBodyTextView.text = currentItem.messageBody
-    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.newInstance(currentItem)) }
+    holder.container.setOnClickListener { v: View ->
+      (v.context as MainActivity).replaceFragment(MessageChatFragment.newInstance(currentItem))
+      holder.container.setOnClickListener { v: View ->
+        (v.context as MainActivity).replaceFragment(MessageChatFragment.getInstance(currentItem))
+
+      }
+    }
   }
 
-  override fun getItemCount(): Int {
-    return messageLists.size
-  }
+    override fun getItemCount(): Int {
+      return messageLists.size
+
+    }
+
   }
 

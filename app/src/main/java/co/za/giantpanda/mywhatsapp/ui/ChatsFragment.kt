@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import co.za.giantpanda.mywhatsapp.R
 
-class CallsFragment : Fragment() {
+class ChatsFragment : Fragment() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-
-
 
   }
 
@@ -21,9 +19,7 @@ class CallsFragment : Fragment() {
     savedInstanceState: Bundle?
   ): View? {
     // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_calls, container, false)
+    return inflater.inflate(R.layout.fragment_chats, container, false)
   }
 
 }
-
-

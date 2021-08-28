@@ -1,6 +1,4 @@
 package co.za.giantpanda.mywhatsapp.ui
-// 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
-
 
 import android.os.Bundle
 import android.view.Menu
@@ -84,7 +82,7 @@ class MainActivity : AppCompatActivity() {
     fragmentTransaction.commit()
   }
 
-  fun replaceFragment(fragment: Fragment?) {
+ internal fun replaceFragment(fragment: Fragment?) {
     val fragmentTransaction = supportFragmentManager.beginTransaction()
     if (fragment != null) {
       fragmentTransaction.add(id.fragmentContainer, fragment).addToBackStack(fragmentTransaction.javaClass.name)
