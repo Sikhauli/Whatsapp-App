@@ -14,6 +14,14 @@ class MessageChatFragment : Fragment() {
 
   private val PARAMS = "params"
 
+  fun getInstance(messageDetails: MessageDetails?): MessageChatFragment {
+    val fragment = MessageChatFragment()
+    val bundle = Bundle()
+    bundle.putSerializable(PARAMS, messageDetails)
+    fragment.arguments = bundle
+    return fragment
+  }
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setHasOptionsMenu(true)

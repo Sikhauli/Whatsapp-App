@@ -1,6 +1,5 @@
 package co.za.giantpanda.mywhatsapp.adapter
 
-import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +9,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
-import co.za.giantpanda.mywhatsapp.ui.ChatsFragment
 import co.za.giantpanda.mywhatsapp.ui.MainActivity
-import co.za.giantpanda.mywhatsapp.ui.MainFragment
 import co.za.giantpanda.mywhatsapp.ui.MessageChatFragment
-import java.text.ParseException
-import java.text.SimpleDateFormat
 import java.util.Calendar.getInstance
-import java.util.Locale
+import java.util.Currency.getInstance
 
 class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageChatsDetailsAdapter.MessageViewHolder>() {
   private var messageLists: MutableList<MessageDetails> = messageDetails
+
+  chat =
 
   class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
     var container: ConstraintLayout = itemView.findViewById(R.id.chatsContainer)
@@ -45,22 +42,19 @@ class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : 
 
   override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
 
+
     val currentItem: MessageDetails = messageLists[position]
 
     holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-    holder.container.setOnClickListener { v: View ->
-      (v.context as MainActivity).replaceFragment(MessageChatFragment.newInstance(currentItem))
-      holder.container.setOnClickListener { v: View ->
-        (v.context as MainActivity).replaceFragment(MessageChatFragment.getInstance(currentItem))
 
-      }
-    }
+    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MessageChatFragment.getInstance(currentItem))
+
+   }
   }
 
     override fun getItemCount(): Int {
       return messageLists.size
 
     }
-
-  }
+}
 

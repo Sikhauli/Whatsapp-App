@@ -13,6 +13,7 @@ import co.za.giantpanda.mywhatsapp.R.id
 import co.za.giantpanda.mywhatsapp.R.layout
 import co.za.giantpanda.mywhatsapp.R.string
 import co.za.giantpanda.mywhatsapp.adapter.ViewPagerAdapter
+import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.google.android.material.tabs.TabLayout.Tab
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
     fragmentTransaction.commit()
   }
 
- internal fun replaceFragment(fragment: Fragment?) {
+ internal fun replaceFragment(fragment: MessageDetails) {
     val fragmentTransaction = supportFragmentManager.beginTransaction()
     if (fragment != null) {
       fragmentTransaction.add(id.fragmentContainer, fragment).addToBackStack(fragmentTransaction.javaClass.name)
