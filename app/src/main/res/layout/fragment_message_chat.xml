@@ -8,12 +8,11 @@
     android:layout_height="match_parent"
     >
 
-  <!-- TODO: Update blank fragment layout -->
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:textAlignment="center"
-      android:text="@string/hello_blank_fragment"
+      android:text="@string/username"
       android:textSize="26sp"
       android:textColor="@color/black"
       android:id="@+id/Username"

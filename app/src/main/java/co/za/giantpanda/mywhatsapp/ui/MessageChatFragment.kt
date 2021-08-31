@@ -14,15 +14,20 @@ import co.za.giantpanda.mywhatsapp.model.MessageListener
 
 class MessageChatFragment : Fragment(), MessageListener {
 
-  private val PARAMS = "params"
+
   private lateinit var messageChatAdapter: MessageChatsDetailsAdapter
 
-   fun newInstance(messageDetails: MessageDetails?): MessageChatFragment {
-    val fragment = MessageChatFragment()
-    val bundle = Bundle()
-    bundle.putSerializable(PARAMS, messageDetails)
-    fragment.arguments = bundle
-    return fragment
+
+  companion object {
+    private const val PARAMS = "params"
+
+    fun getInstance(messageDetails: MessageDetails?): MessageChatFragment {
+      val fragment = MessageChatFragment()
+      val bundle = Bundle()
+      bundle.putSerializable(PARAMS, messageDetails)
+      fragment.arguments = bundle
+      return fragment
+    }
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {

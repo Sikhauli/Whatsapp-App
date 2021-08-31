@@ -10,11 +10,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import co.za.giantpanda.mywhatsapp.ui.MainActivity
-import co.za.giantpanda.mywhatsapp.ui.MainFragment
 import co.za.giantpanda.mywhatsapp.ui.MessageChatFragment
-import java.util.Calendar.getInstance
-import java.util.Currency.getInstance
-import kotlin.coroutines.EmptyCoroutineContext.get
 
 class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageChatsDetailsAdapter.MessageViewHolder>() {
   private var messageLists: MutableList<MessageDetails> = messageDetails
@@ -36,7 +32,7 @@ class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : 
   }
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-    val v: View = LayoutInflater.from(parent.context).inflate(R.layout.message_items, parent, false)
+    val v: View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_message_chat, parent, false)
     return MessageViewHolder(v)
   }
 
@@ -46,7 +42,7 @@ class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : 
     val currentItem: MessageDetails = messageLists[position]
 
     holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.newInstance(currentItem)) }
+    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).addFragment(MessageChatFragment.getInstance(currentItem)) }
   }
 
     override fun getItemCount(): Int {

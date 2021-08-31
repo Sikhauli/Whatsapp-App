@@ -21,5 +21,6 @@
   <string name="my_status">My status</string>
   <string name="recent_updates">Recent Updates</string>
   <string name="todo">TODO</string>
+  <string name="username">Username</string>
 
 </resources>

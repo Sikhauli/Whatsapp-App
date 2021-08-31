@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     return super.onCreateOptionsMenu(menu)
   }
 
-  private fun addFragment(fragment: Fragment) {
+  fun addFragment(fragment: Fragment) {
     val fragmentManager = supportFragmentManager
     val fragmentTransaction = fragmentManager.beginTransaction()
     val mainFragment = MainFragment()

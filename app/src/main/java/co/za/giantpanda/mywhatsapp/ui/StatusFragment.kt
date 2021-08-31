@@ -22,10 +22,12 @@ class StatusFragment : Fragment(), MessageListener {
   companion object {
     private const val MESSAGE_DETAILS = "MESSAGE_DETAILS"
 
-    fun newInstance(messageDetails: MessageDetails): MainFragment {
+    fun newInstance(messageDetails: MessageDetails): MainFragment? {
       val bundle = Bundle().apply { putSerializable(MESSAGE_DETAILS, messageDetails) }
       return MainFragment().apply { arguments = bundle }
     }
+
+
   }
 
   override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
