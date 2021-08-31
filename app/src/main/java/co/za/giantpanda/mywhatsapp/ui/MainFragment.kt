@@ -18,7 +18,6 @@ import java.util.ArrayList
 class MainFragment : Fragment(), MessageListener {
 
     private lateinit var messageAdapter: MessageAdapter
-    private lateinit var messageChatAdapter: MessageChatsDetailsAdapter
 
     companion object {
         private const val MESSAGE_DETAILS = "MESSAGE_DETAILS"

@@ -8,13 +8,16 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.R.layout
+import co.za.giantpanda.mywhatsapp.adapter.MessageChatsDetailsAdapter
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
+import co.za.giantpanda.mywhatsapp.model.MessageListener
 
-class MessageChatFragment : Fragment() {
+class MessageChatFragment : Fragment(), MessageListener {
 
   private val PARAMS = "params"
+  private lateinit var messageChatAdapter: MessageChatsDetailsAdapter
 
-  fun getInstance(messageDetails: MessageDetails?): MessageChatFragment {
+   fun newInstance(messageDetails: MessageDetails?): MessageChatFragment {
     val fragment = MessageChatFragment()
     val bundle = Bundle()
     bundle.putSerializable(PARAMS, messageDetails)
@@ -44,6 +47,10 @@ class MessageChatFragment : Fragment() {
      senderNameTextView.text = java.lang.String.format("%s %s", messageDetails.getFirstName(), messageDetails.getLastName())
       }
     }
+  }
+
+  override fun onMessageReceived(messagesList: List<MessageDetails>) {
+    messageChatAdapter.addItems(messagesList)
   }
 
 }

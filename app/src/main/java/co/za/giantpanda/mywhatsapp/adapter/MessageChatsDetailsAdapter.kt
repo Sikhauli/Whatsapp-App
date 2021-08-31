@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import co.za.giantpanda.mywhatsapp.R
 import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import co.za.giantpanda.mywhatsapp.ui.MainActivity
+import co.za.giantpanda.mywhatsapp.ui.MainFragment
 import co.za.giantpanda.mywhatsapp.ui.MessageChatFragment
 import java.util.Calendar.getInstance
 import java.util.Currency.getInstance
+import kotlin.coroutines.EmptyCoroutineContext.get
 
 class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageChatsDetailsAdapter.MessageViewHolder>() {
   private var messageLists: MutableList<MessageDetails> = messageDetails
-
-  chat =
 
   class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
     var container: ConstraintLayout = itemView.findViewById(R.id.chatsContainer)
@@ -46,10 +46,7 @@ class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : 
     val currentItem: MessageDetails = messageLists[position]
 
     holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-
-    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MessageChatFragment.getInstance(currentItem))
-
-   }
+    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).replaceFragment(MainFragment.newInstance(currentItem)) }
   }
 
     override fun getItemCount(): Int {
