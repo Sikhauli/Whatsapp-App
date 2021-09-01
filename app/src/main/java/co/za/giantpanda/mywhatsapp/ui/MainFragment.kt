@@ -15,7 +15,7 @@ import co.za.giantpanda.mywhatsapp.model.MessageDetails
 import co.za.giantpanda.mywhatsapp.model.MessageListener
 import java.util.ArrayList
 
-class MainFragment : Fragment(), MessageListener {
+class MainFragment : Fragment(layout.fragment_main), MessageListener {
 
     private lateinit var messageAdapter: MessageAdapter
 
@@ -26,10 +26,6 @@ class MainFragment : Fragment(), MessageListener {
             val bundle = Bundle().apply { putSerializable(MESSAGE_DETAILS, messageDetails) }
             return MainFragment().apply { arguments = bundle }
         }
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(layout.fragment_main, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

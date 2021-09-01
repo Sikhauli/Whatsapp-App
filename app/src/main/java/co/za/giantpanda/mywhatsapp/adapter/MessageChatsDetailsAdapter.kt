@@ -13,41 +13,37 @@ import co.za.giantpanda.mywhatsapp.ui.MainActivity
 import co.za.giantpanda.mywhatsapp.ui.MessageChatFragment
 
 class MessageChatsDetailsAdapter(messageDetails: MutableList<MessageDetails>) : RecyclerView.Adapter<MessageChatsDetailsAdapter.MessageViewHolder>() {
-  private var messageLists: MutableList<MessageDetails> = messageDetails
+    private var messageLists: MutableList<MessageDetails> = messageDetails
 
-  class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
-    var container: ConstraintLayout = itemView.findViewById(R.id.chatsContainer)
-    var senderNameTextView: TextView = itemView.findViewById(R.id.senderNameTextView)
-  }
+    class MessageViewHolder(itemView: View) : ViewHolder(itemView) {
+        var container: ConstraintLayout = itemView.findViewById(R.id.chatsContainer)
+        var senderNameTextView: TextView = itemView.findViewById(R.id.senderNameTextView)
+    }
 
-  fun addItems(messageDetails: List<MessageDetails>?) {
-    messageLists.clear()
-    messageLists.addAll(messageDetails!!)
-    notifyDataSetChanged()
-  }
+    fun addItems(messageDetails: List<MessageDetails>) {
+        messageLists.clear()
+        messageLists.addAll(messageDetails)
+        notifyDataSetChanged()
+    }
 
-  fun addItem(messageDetail: MessageDetails) {
-    messageLists.add(messageDetail)
-    notifyItemChanged(messageLists.size - 1)
-  }
+    fun addItem(messageDetail: MessageDetails) {
+        messageLists.add(messageDetail)
+        notifyItemChanged(messageLists.size - 1)
+    }
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
-    val v: View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_message_chat, parent, false)
-    return MessageViewHolder(v)
-  }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
+        val v: View = LayoutInflater.from(parent.context).inflate(R.layout.fragment_message_chat, parent, false)
+        return MessageViewHolder(v)
+    }
 
-  override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
-
-
-    val currentItem: MessageDetails = messageLists[position]
-
-    holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
-    holder.container.setOnClickListener { v: View -> (v.context as MainActivity).addFragment(MessageChatFragment.getInstance(currentItem)) }
-  }
+    override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
+        val currentItem: MessageDetails = messageLists[position]
+        holder.senderNameTextView.text = String.format("%s %s", currentItem.firstName, currentItem.lastName)
+        holder.container.setOnClickListener { v: View -> (v.context as MainActivity).addFragment(MessageChatFragment.getInstance(currentItem)) }
+    }
 
     override fun getItemCount(): Int {
-      return messageLists.size
-
+        return messageLists.size
     }
 }
 

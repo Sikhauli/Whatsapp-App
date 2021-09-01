@@ -11,7 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
-class PicturesFragment : Fragment() {
+class PicturesFragment : Fragment(R.layout.fragment_pictures) {
 
   private var sheetBehavior: BottomSheetBehavior<*>? = null
   private var bottomSheet: RelativeLayout? = null
@@ -20,7 +20,6 @@ class PicturesFragment : Fragment() {
   private var peekView: RelativeLayout? = null
   private var collapsedView:RelativeLayout? = null
  // private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
-
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -38,13 +37,4 @@ class PicturesFragment : Fragment() {
 //    MainRecyclerView?.setAdapter(...
 
   }
-
-  override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?): View? {
-    return inflater.inflate(R.layout.fragment_pictures, container, false)
-  }
-
-
-
 }

@@ -7,19 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import co.za.giantpanda.mywhatsapp.R
 
-class ChatsFragment : Fragment() {
+class ChatsFragment : Fragment(R.layout.fragment_chats) {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
 
   }
-
-  override fun onCreateView(
-    inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
-    // Inflate the layout for this fragment
-    return inflater.inflate(R.layout.fragment_chats, container, false)
-  }
-
 }
